@@ -1,5 +1,6 @@
 #include <iostream>
-#include <typeinfo>
+#include <thread>
+#include <chrono>
 using namespace std;
 
 int calciAdd (int val1, int val2) {
@@ -60,7 +61,9 @@ int main () {
         cout << "Sorry, Seems that you selected an invalid mode.";
     }
 
-    cout << "\n\nThank you for using my app!";
+    cout << "\n\nThank you for using my app!\n"
+        "Waiting for 8s to close..";
 
+    this_thread::sleep_for(chrono::seconds(8));
     return 0;
 }
